@@ -18,7 +18,8 @@ class LoginScreen extends StatelessWidget {
                   const SizedBox(height: 10),
                   Text('LOGIN', style: Theme.of(context).textTheme.headline4),
                   const SizedBox(height: 30),
-                  const Text('Formulario')
+                  //const Text('Formulario')
+                  _LoginForm(),
                 ],
               ),
             ),
@@ -26,5 +27,41 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
     ));
+  }
+}
+
+class _LoginForm extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Form(
+        //Mantener las referencias
+        child: Column(
+          children: [
+            TextFormField(
+              autocorrect: false,
+              keyboardType: TextInputType.emailAddress,
+              decoration: const InputDecoration(
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.deepPurple),
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.deepPurple,
+                      width: 2,
+                    ),
+                  ),
+                  hintText: 'Edxniel@gmail.com',
+                  labelText: 'Correo electrocnico',
+                  labelStyle: TextStyle(
+                    color: Colors.grey,
+                  ),
+                  prefixIcon: Icon(Icons.alternate_email_sharp,
+                      color: Colors.deepPurple)),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

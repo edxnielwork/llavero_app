@@ -31,7 +31,7 @@ class _HeaderIcon extends StatelessWidget {
     return SafeArea(
       child: Container(
         width: double.infinity,
-        margin: const EdgeInsets.only(top: 30),
+        margin: const EdgeInsets.only(top: 60),
         child: const Icon(Icons.person_pin,
             color: Color.fromARGB(255, 255, 255, 255), size: 100),
         //height: 200,
@@ -64,8 +64,8 @@ class _BlueBox extends StatelessWidget {
 
   BoxDecoration _blueBackground() => const BoxDecoration(
           gradient: LinearGradient(colors: [
-        Color.fromRGBO(255, 222, 89, 8),
-        Color.fromRGBO(255, 222, 120, 1),
+        Color.fromARGB(255, 25, 40, 177),
+        Color.fromARGB(255, 16, 59, 201),
       ]));
 }
 

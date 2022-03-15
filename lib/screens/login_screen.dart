@@ -59,6 +59,11 @@ class _LoginForm extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 30),
+            MaterialButton(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              onPressed: () {},
+            )
           ],
         ),
       ),

@@ -17,7 +17,7 @@ class InputDecorations {
         labelStyle: TextStyle(
           color: Colors.grey,
         ),
-        prefixIcon:
-            Icon(Icons.alternate_email_sharp, color: Colors.deepPurple));
+        prefixIcon: Icon(Icons.alternate_email_sharp,
+            color: Color.fromARGB(255, 23, 22, 24)));
   }
 }

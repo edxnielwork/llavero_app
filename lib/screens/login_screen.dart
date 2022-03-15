@@ -100,13 +100,19 @@ class _LoginForm extends StatelessWidget {
             color: const Color.fromARGB(255, 25, 40, 177),
             child: Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 90, vertical: 15),
-                child: const Text(
-                  'Ingresar',
+                    const EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                child: Text(
+                  loginForm.isLoading ? 'Conectandose...' : 'Ingresar',
                   style: TextStyle(color: Colors.white),
                 )),
             onPressed: () {
+              FocusScope.of(context).unfocus();
               if (!loginForm.isValidForm()) return;
+              loginForm.isLoading = true;
+              Future.delayed(const Duration(seconds: 5));
+              //TODO: validar si el login es corecto
+              loginForm.isLoading = false;
+
               Navigator.pushReplacementNamed(context, 'home');
             },
           )

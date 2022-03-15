@@ -42,11 +42,23 @@ class _LoginForm extends StatelessWidget {
             TextFormField(
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
-              decoration: InputDecorations.authInputDecoration(),
+              decoration: InputDecorations.authInputDecoration(
+                  hintText: 'edxniel@gmail.com',
+                  labelText: 'Correo Electronico',
+                  prefixIcon: Icons.person),
             ),
-            const SizedBox(
-              height: 30,
+            const SizedBox(height: 30),
+            TextFormField(
+              autocorrect: false,
+              obscureText: true,
+              keyboardType: TextInputType.emailAddress,
+              decoration: InputDecorations.authInputDecoration(
+                hintText: '*********',
+                labelText: 'Contraseña',
+                prefixIcon: Icons.lock_outline,
+              ),
             ),
+            const SizedBox(height: 30),
           ],
         ),
       ),

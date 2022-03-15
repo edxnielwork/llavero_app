@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llavero_app/widgets/ui/input_decorations.dart';
 import 'package:llavero_app/widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -41,23 +42,10 @@ class _LoginForm extends StatelessWidget {
             TextFormField(
               autocorrect: false,
               keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.deepPurple),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.deepPurple,
-                      width: 2,
-                    ),
-                  ),
-                  hintText: 'Edxniel@gmail.com',
-                  labelText: 'Correo electrocnico',
-                  labelStyle: TextStyle(
-                    color: Colors.grey,
-                  ),
-                  prefixIcon: Icon(Icons.alternate_email_sharp,
-                      color: Colors.deepPurple)),
+              decoration: InputDecorations.authInputDecoration(),
+            ),
+            const SizedBox(
+              height: 30,
             ),
           ],
         ),

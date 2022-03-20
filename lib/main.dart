@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'THE ACADEMY',
+      title: 'LLAVERO APP',
       debugShowCheckedModeBanner: false,
       initialRoute: 'login',
       routes: {

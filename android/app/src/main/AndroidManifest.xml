@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.llavero_app">
+    package="com.sew.llavero_app">
    <application
         android:label="llavero_app"
         android:name="${applicationName}"

@@ -4,8 +4,8 @@ import 'package:llavero_app/providers/login_form_provider.dart';
 import 'package:llavero_app/widgets/ui/input_decorations.dart';
 import 'package:llavero_app/widgets/widgets.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,8 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const SizedBox(height: 10),
-                  Text('LOGIN', style: Theme.of(context).textTheme.headline4),
+                  Text('Crear Cuenta',
+                      style: Theme.of(context).textTheme.headline4),
                   const SizedBox(height: 30),
                   //const Text('Formulario')
 
@@ -40,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                 shape: MaterialStateProperty.all(StadiumBorder()),
               ),
               child: const Text(
-                'Crear una nueva cuenta',
+                '¿Ya tienes cuenta?',
                 style: TextStyle(fontSize: 18, color: Colors.black87),
               ),
             ),

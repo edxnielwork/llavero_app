@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:llavero_app/services/auth_service.dart';
 import 'package:provider/provider.dart';
 import 'package:llavero_app/providers/login_form_provider.dart';
 import 'package:llavero_app/widgets/ui/input_decorations.dart';
@@ -33,8 +34,7 @@ class RegisterScreen extends StatelessWidget {
             ),
             const SizedBox(height: 50),
             TextButton(
-              onPressed: () =>
-                  Navigator.pushReplacementNamed(context, 'register'),
+              onPressed: () => Navigator.pushReplacementNamed(context, 'login'),
               style: ButtonStyle(
                 overlayColor:
                     MaterialStateProperty.all(Colors.indigo.withOpacity(0.1)),
@@ -113,16 +113,24 @@ class _LoginForm extends StatelessWidget {
                   loginForm.isLoading ? 'Conectandose...' : 'Ingresar',
                   style: TextStyle(color: Colors.white),
                 )),
-            onPressed: () {
-              FocusScope.of(context).unfocus();
-              if (!loginForm.isValidForm()) return;
-              loginForm.isLoading = true;
-              Future.delayed(const Duration(seconds: 5));
-              //TODO: validar si el login es corecto
-              loginForm.isLoading = false;
+            onPressed: loginForm.isLoading
+                ? null
+                : () async {
+                    FocusScope.of(context).unfocus();
+                    final authService =
+                        Provider.of<AuthService>(context, listen: false);
+                    if (!loginForm.isValidForm()) return;
 
-              Navigator.pushReplacementNamed(context, 'home');
-            },
+                    loginForm.isLoading = true;
+
+                    //TODO: validar si el login es corecto
+                    final String? token = await authService.createUser(
+                        loginForm.email, loginForm.password);
+
+                    loginForm.isLoading = false;
+
+                    Navigator.pushReplacementNamed(context, 'home');
+                  },
           )
         ],
       ),
